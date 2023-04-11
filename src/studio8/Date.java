@@ -3,11 +3,14 @@ package studio8;
 import java.util.ArrayList;
 import java.util.List;
 
+import assignment8.Entity;
+
 public class Date {
 	private int month;
 	private int year;
 	private int day;
 	private String[] lst;
+	private List<Object> lst2;
 	public Date(int month1,int year1, int day1){
 		month=month1;
 		year=year1;
@@ -15,6 +18,11 @@ public class Date {
 		lst=new String[2];//**
 		lst[0]="2019-01-01";
 		lst[1]="2019-01-02";
+		lst2=new ArrayList<Object>();
+		lst2.add(1.0);
+		lst2.add(2.0);
+		lst2.add(1);
+		lst2.add("s");
 	}
 	public String to_String() {
 		String Smonth;
@@ -47,8 +55,12 @@ public class Date {
 	}
     public static void main(String[] args) {
     	Date class1=new Date(1,2019,1);
-
-    	System.out.println(class1.is_holiday());
+    	Date class2=new Date(1,2019,1);
+    	System.out.println(class1.equals(class2));
+    	for (Object i:class1.lst2) {
+    		System.out.println(i);
+    	}
+    
     }
 
 }
